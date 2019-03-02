@@ -56,6 +56,7 @@ class App extends Component {
 
 
   checkIfFoodEaten() {
+    // console.log('snake x and y', this.state.snake[0].x,"   " ,this.state.snake[0].y, 'this.food x and y', this.foodX , "  ",this.foodY)
     if(this.state.snake[0].x === this.foodX && this.state.snake[0].y === this.foodY) {
       return true;
     }
@@ -90,8 +91,19 @@ class App extends Component {
 
   //get random x and y
   getRandomCoordinates() {
-    let randomFoodX = Math.random()*(this.gameWidth-this.movementUnit);
-    let randomFoodY = Math.random()*(this.gameWidth-this.movementUnit);
+    // let randomFoodX = Math.floor(Math.random()*(this.gameWidth-this.movementUnit));
+    // let randomFoodY = Math.floor(Math.random()*(this.gameWidth-this.movementUnit));
+    // console.log('xinsi => ', this.gameWidth- this.movementUnit);
+
+    let x = Math.floor((Math.random() * (this.gameWidth-this.movementUnit)));
+    x = x - x%10;
+    
+    let y = Math.floor((Math.random() * (this.gameHeight-this.movementUnit)));
+    y = y - y%10;
+
+    let randomFoodX = x;
+    let randomFoodY = y
+
     return {x:randomFoodX, y:randomFoodY};
   }
 
@@ -153,6 +165,7 @@ class App extends Component {
   }
 
   componentDidUpdate() {
+    // console.log('update is called')
     this.drawFullSnake();
     this.drawFood();
   }
@@ -181,7 +194,7 @@ class App extends Component {
 
   // decide the dx and dy based on key pressed
   handleChangeDirection(event) {
-    console.log('handle change direction called', event);
+    // console.log('handle change direction called', event);
     
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
@@ -209,8 +222,7 @@ class App extends Component {
     if(keyPressed === UP_KEY && !movingDown) {
       this.dy = -1 * this.movementUnit;
       this.dx = 0;
-      console.log('x ==>', this.dx, 'y ===> ', this.dy);
-
+      // console.log('x ==>', this.dx, 'y ===> ', this.dy);
     }
 
     if(keyPressed === DOWN_KEY && !movingUp) {
@@ -226,7 +238,7 @@ class App extends Component {
     return (
    
        <div
-      style={{flex:1, display:'flex',justifyContent:'center', alignItems:'center',}}
+      style={{flex:1, display:'flex',justifyContent:'center', alignItems:'center',marginTop:70}}
      >
 
        <canvas
