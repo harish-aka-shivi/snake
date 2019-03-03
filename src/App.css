@@ -1,5 +1,21 @@
+html {
+  --background: #1a1c33;
+  --text-color-normal: #0a244d;
+  --card-background : #090a14;
+  --primary-green : #1EB980;
+  --primary-orange : #FF6859; 
+}
+
 .App {
   text-align: center;
+  flex:1;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  width: 100vw;
+  background-color: var(--background);
 }
 
 .App-logo {
@@ -31,3 +47,93 @@
   }
 }
 
+
+/* score style */
+.Score-root {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  padding-left: 4px;
+  margin-right: 8px;
+  background-color: var(--card-background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.High-score {
+  color: white;
+  font-size: 3em;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: 'Press Start 2P', 'cursive';
+
+
+}
+
+.Score-quantity-high {
+  color: white;
+  font-size: 3em;
+  font-family: 'Press Start 2P', 'cursive';
+}
+
+.Score-quantity-current {
+  color: white;
+  font-size: 3em;
+  font-family: 'Press Start 2P', 'cursive';
+
+}
+
+
+/* Left component style */
+.Left-component {
+  width: 100%;
+  height: 90vh;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  background-color: var(--card-background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: 'center';
+}
+
+.Snake-letter-style {
+  font-size: 5em;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: white;
+  font-family: 'Press Start 2P', 'cursive';
+}
+
+
+
+/*  */
+.Play-button {
+  color: white;
+  font-size:3em;
+  padding: 24px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', 'cursive';
+  border: 1px solid white;
+}
+
+.Play-button-cont {
+  flex:1;
+  display:flex;
+  height:400px;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+}
+
+.Play-button-container {
+  width: 640px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-background);
+
+}
